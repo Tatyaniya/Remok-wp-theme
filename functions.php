@@ -198,3 +198,92 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+
+
+// размеры для картинок на главной в работах
+ add_image_size( 'works-thumb', 630, 400, true );
+
+// размеры для картинок на главной в блоге
+add_image_size( 'blog-thumb', 430, 420, true );
+
+
+
+
+/**
+ * Регистрация post type
+ *
+ * @see get_post_type_labels() for label keys.
+ */
+function r_group_post_type() {
+ 
+    register_post_type( 'works', array(
+        'labels'             => array(
+            'name'                  => 'Роботи',
+            'singular_name'         => 'Робота',
+            'add_new'               => 'Додати нову',
+            'add_new_item'          => 'Додати нову роботу',
+            'edit_item'             => 'Редагувати роботу',
+            'all_items'             => 'Всі роботи',
+        ),
+        'public'             => true,
+        'publicly_queryable' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'query_var'          => true,
+        'rewrite'            => array( 'slug' => 'works' ),
+        'capability_type'    => 'post',
+        'has_archive'        => true,
+        'hierarchical'       => false,
+        'menu_position'      => null,
+        'menu_icon'			 => 'dashicons-admin-multisite',
+        'supports'           => array( 'title', 'thumbnail')
+    ) );
+
+    register_post_type( 'video', array(
+        'labels'             => array(
+            'name'                  => 'Відгуки',
+            'singular_name'         => 'Відгук',
+            'add_new'               => 'Додати новий',
+            'add_new_item'          => 'Додати новий відгук',
+            'edit_item'             => 'Редагувати відгук',
+            'all_items'             => 'Всі відгуки',
+        ),
+        'public'             => true,
+        'publicly_queryable' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'query_var'          => true,
+        'rewrite'            => array( 'slug' => 'video' ),
+        'capability_type'    => 'post',
+        'has_archive'        => true,
+        'hierarchical'       => false,
+        'menu_position'      => null,
+        'menu_icon'			 => 'dashicons-buddicons-buddypress-logo',
+        'supports'           => array( 'title', 'editor', 'thumbnail')
+    ) );
+
+    register_post_type( 'blog', array(
+        'labels'             => array(
+            'name'                  => 'Статті',
+            'singular_name'         => 'Стаття',
+            'add_new'               => 'Додати нову',
+            'add_new_item'          => 'Додати нову статтю',
+            'edit_item'             => 'Редагувати статтю',
+            'all_items'             => 'Всі статті',
+        ),
+        'public'             => true,
+        'publicly_queryable' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'query_var'          => true,
+        'rewrite'            => array( 'slug' => 'blog' ),
+        'capability_type'    => 'post',
+        'has_archive'        => true,
+        'hierarchical'       => false,
+        'menu_position'      => null,
+        'menu_icon'			 => 'dashicons-format-gallery',
+        'supports'           => array( 'title', 'editor', 'thumbnail', 'excerpt')
+    ) );
+}
+ 
+add_action( 'init', 'r_group_post_type' );

@@ -15,8 +15,6 @@
 get_header();
 ?>
 
-<a href="<?php echo site_url(); ?>/#works">Фото робіт</a>
-
 <main class="main">
     <section class="offer">
         <div class="container offer__container">
@@ -37,13 +35,17 @@ get_header();
                 <form action="#" class="calc__form" @submit.prevent="showResult()">
                     <div class="calc__item calc__item--small">
                         <h4 class="calc__title">Площа</h4>
-                        <input type="number" :readonly="blockedForm" class="calc__input" min="2" max="10000" value="110" v-model="square">
-                        <span class="calc__label">м<sup>2</sup></span>
+                        <div class="calc__values">
+                            <input type="number" :readonly="blockedForm" class="calc__input" min="2" max="10000" value="110" v-model="square">
+                            <span class="calc__label">м<sup>2</sup></span>
+                        </div>
                     </div>
                     <div class="calc__item calc__item--large">
                         <h4 class="calc__title">Середня товщина стяжки</h4>
-                        <input type="number" :readonly="blockedForm" class="calc__input" min="6" max="30" v-model="height">
-                        <span class="calc__label">см.</span>
+                        <div class="calc__values">
+                            <input type="number" :readonly="blockedForm" class="calc__input" min="6" max="30" v-model="height">
+                            <span class="calc__label">см.</span>
+                        </div>
                     </div>
                     <div class="calc__item">
                         <h4 class="calc__title">Матеріал</h4>
@@ -86,7 +88,7 @@ get_header();
             <ul class="services__list">
                 <li class="services__item services__item--large">
                     <div class="services__icon">
-                        <img src="img/screed.svg" alt="screed">
+                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/screed.svg" alt="screed">
                     </div>
                     <h3 class="services__subtitle">Напівсуха стяжка</h3>
                     <div class="services__desc">для квартир, будинків та комерційних <br>приміщень</div>
@@ -101,28 +103,28 @@ get_header();
                 </li>
                 <li class="services__item">
                     <div class="services__icon">
-                        <img src="img/building.svg" alt="building">
+                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/building.svg" alt="building">
                     </div>
                     <h3 class="services__subtitle">Будівництво котеджів</h3>
                     <a href="#" class="services__link">Детальніше</a>
                 </li>
                 <li class="services__item">
                     <div class="services__icon">
-                        <img src="img/plumbing.svg" alt="plumbing">
+                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/plumbing.svg" alt="plumbing">
                     </div>
                     <h3 class="services__subtitle">Монтаж сантехніки <br>та опалення</h3>
                     <a href="#" class="services__link">Детальніше</a>
                 </li>
                 <li class="services__item">
                     <div class="services__icon">
-                        <img src="img/repairs.svg" alt="repairs">
+                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/repairs.svg" alt="repairs">
                     </div>
                     <h3 class="services__subtitle">Ремонт під ключ</h3>
                     <a href="#" class="services__link">Детальніше</a>
                 </li>
                 <li class="services__item">
                     <div class="services__icon">
-                        <img src="img/landscape.svg" alt="landscape">
+                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/landscape.svg" alt="landscape">
                     </div>
                     <h3 class="services__subtitle">Ландшафтний дизайн</h3>
                     <a href="#" class="services__link">Детальніше</a>
@@ -186,7 +188,7 @@ get_header();
             <ul class="why__list">
                 <li class="why__item">
                     <div class="why__icon">
-                        <img src="img/why-icon.svg" alt="icon">
+                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/why-icon.svg" alt="icon">
                     </div>
                     <div class="why__desc">
                         Безкоштовні заміри <br>протягом 12 годин <br>після дзвінка
@@ -194,7 +196,7 @@ get_header();
                 </li>
                 <li class="why__item">
                     <div class="why__icon">
-                        <img src="img/why-icon.svg" alt="icon">
+                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/why-icon.svg" alt="icon">
                     </div>
                     <div class="why__desc">
                         Термін виконання <br>роботи (до 200 кв.м) <br>- 1 день
@@ -202,7 +204,7 @@ get_header();
                 </li>
                 <li class="why__item">
                     <div class="why__icon">
-                        <img src="img/why-icon.svg" alt="icon">
+                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/why-icon.svg" alt="icon">
                     </div>
                     <div class="why__desc">
                         Акуратність під час <br>роботи
@@ -210,7 +212,7 @@ get_header();
                 </li>
                 <li class="why__item">
                     <div class="why__icon">
-                        <img src="img/why-icon.svg" alt="icon">
+                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/why-icon.svg" alt="icon">
                     </div>
                     <div class="why__desc">
                         Висихання стяжки <br>протягом 12 год

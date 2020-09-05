@@ -15,9 +15,6 @@
 get_header();
 ?>
 
-page
-
-<a href="<?php echo site_url(); ?>/#works">Фото робіт</a>
 
 	<main id="primary" class="site-main">
 

@@ -1,23 +1,13 @@
 $( function() {
 
-    /***** Плавная прокрутка *****/
+    /***** Плавная прокрутка в оффере *****/
 
-    $('.offer__btn--cost').click( e => {
+    $('.offer__btn--cost, .menu-index li a').click( e => {
         e.preventDefault();
 		elementClick = $(e.currentTarget).attr("href");
-        destination = $(elementClick).offset().top;
-        destination -= 116;
+        destination = $(elementClick).offset().top - 116;
         $('body,html').animate({scrollTop: destination }, 800);
     });
-
-    $('.menu__list li a').click( e => {
-        e.preventDefault();
-		elementClick = $(e.currentTarget).attr("href");
-        destination = $(elementClick).offset().top;
-        destination -= 116;
-        $('body,html').animate({scrollTop: destination }, 800);
-    });
-
 
     /***** Модалка *****/
 
@@ -42,14 +32,14 @@ $( function() {
     });
 
 
-     /*** Слайдер c работами ***/
+    /*** Слайдер c работами ***/
 
-     $('.works__slider').slick({
+    $('.works__slider').slick({
         infinite: true,
         slidesToShow: 2,
         slidesToScroll: 1,
-        prevArrow: '<img src="../img/arrow-prev.png" alt="prev" class="works-prev">',
-        nextArrow: '<img src="../img/arrow-next.png" alt="next" class="works-next">',
+        prevArrow: '<div class="works-prev"></div>',
+        nextArrow: '<div class="works-next"></div>',
         responsive: [
             {
               breakpoint: 769,
@@ -69,8 +59,8 @@ $( function() {
         lazyLoad: 'ondemand',
         centerMode: true,
         centerPadding: '10px',
-        prevArrow: '<img src="img/arrow-prev.png" alt="prev" class="whatSay-prev">',
-        nextArrow: '<img src="../img/arrow-next.png" alt="next" class="whatSay-next">',
+        prevArrow: '<div class="whatSay-prev"></div>',
+        nextArrow: '<div class="whatSay-next"></div>',
         responsive: [
             {
               breakpoint: 769,
@@ -87,8 +77,8 @@ $( function() {
         infinite: true,
         slidesToShow: 3,
         slidesToScroll: 1,
-        prevArrow: '<img src="img/arrow-prev.png" alt="prev" class="blog-prev">',
-        nextArrow: '<img src="img/arrow-next.png" alt="next" class="blog-next">',
+        prevArrow: '<div class="blog-prev"></div>',
+        nextArrow: '<div class="blog-next"></div>',
 
         responsive: [
             {
@@ -122,17 +112,34 @@ $( function() {
 
     /*** Анимация в хедере ***/
 
-    if ($(window).width() > 992) { 
+    function animateMenu() {
+        if ($(window).width() > 992) {
 
-        $(window).scroll(function() {
-            
             $('.header__logo').animate({
                 opacity: 1,
             }, 800);
             $('.menu__list').animate({
                 left: '0',
             }, 800);
-        });
+        }
     }
+
+    $(window).scroll(function() {
+        animateMenu();
+    });
+
+    $(window).resize(function() {
+        animateMenu();
+    });
     
+});
+
+$(window).on('load', function () {  
+    let curUrl = window.location.href;
+    if (curUrl.indexOf("#") !== -1) {
+        let anchor = curUrl.split('#')[1];
+        let offsetPageY = $('#' + anchor).offset().top - 116;
+        console.log(offsetPageY);
+        $('body,html').animate({scrollTop: offsetPageY }, 800);
+    }
 });

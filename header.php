@@ -50,36 +50,12 @@
                             'theme_location'  => 'header_menu',
                             'menu'            => 'header-menu', 
                             'container'       => false, 
-                            'menu_class'      => 'menu__list',
+                            'menu_class'      => 'menu-index menu__list',
                             'echo'            => true,
                             'depth'           => 0,
                             'walker'          => '',
                         ] );
                     ?>
-
-
-
-                    <!-- <ul class="menu__list">
-                        <li>
-                            <a href="<?php echo get_template_directory_uri() ?>/#services">Послуги</a>
-                        </li>
-                        <li>
-                            <a href="<?php echo home_url('#works'); ?>">Фото робіт</a>
-                        </li>
-                        <li>
-                            <a href="<?php echo get_template_directory_uri() ?>/#blog">Про компанію</a>
-                        </li>
-                        <li>
-                            <a href="<?php echo get_template_directory_uri() ?>/#calc">Розрахунок вартості</a>
-                        </li>
-                        <li>
-                            <a href="<?php echo get_template_directory_uri() ?>/#whatSay">Відгуки</a>
-                        </li>
-                        <li>
-                            <a href="<?php echo get_template_directory_uri() ?>/#footer">Контакти</a>
-                        </li>
-                    </ul> -->
-
 
                 </nav>
                 <div class="phones header__phones">

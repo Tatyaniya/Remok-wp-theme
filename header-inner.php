@@ -50,7 +50,7 @@
                             'theme_location'  => 'header_inner_menu',
                             'menu'            => 'header-inner-menu', 
                             'container'       => false, 
-                            'menu_class'      => 'menu__list',
+                            'menu_class'      => 'menu-inner menu__list',
                             'echo'            => true,
                             'depth'           => 0,
                             'walker'          => '',
