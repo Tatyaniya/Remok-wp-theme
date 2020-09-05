@@ -287,3 +287,9 @@ function r_group_post_type() {
 }
  
 add_action( 'init', 'r_group_post_type' );
+
+
+// Размер отрывка в слайдере блога на главной
+add_filter( 'excerpt_length', function(){
+	return 7;
+} );

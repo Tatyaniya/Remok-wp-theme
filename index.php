@@ -13,6 +13,7 @@
  */
 
 get_header();
+
 ?>
 
 <main class="main">
@@ -167,18 +168,22 @@ get_header();
         <div class="container works__container">
             <h2 class="works__title">Виконані роботи</h2>
             <div class="works__slider">
-                <div class="works__slide">
-                    <img src="img/slide-work-1.jpg" alt="slide">
-                </div>
-                <div class="works__slide">
-                    <img src="img/slide-work-2.jpg" alt="slide">
-                </div>
-                <div class="works__slide">
-                    <img src="img/slide-work-1.jpg" alt="slide">
-                </div>
-                <div class="works__slide">
-                    <img src="img/slide-work-2.jpg" alt="slide">
-                </div>
+
+                <?php $works = new WP_Query( array(
+                    'post_type' => 'works',
+                    'posts_per_page'=> -1
+                ));
+
+                    while ( $works->have_posts() ) :  $works->the_post(); ?>
+
+                    <div class="works__slide">
+                        <?php echo get_the_post_thumbnail(get_the_ID(), 'works-thumb'); ?>
+                    </div>
+
+                <?php endwhile; 
+                    wp_reset_postdata();
+                ?>
+
             </div>
         </div>                
     </section>
@@ -226,30 +231,23 @@ get_header();
         <div class="container whatSay__container">
             <h2 class="whatSay__title">Що говорять клієнти?</h2>
             <div class="whatSay__slider">
-                <div class="whatSay__slide">
-                    <img src="img/video-1.jpg" alt="video">
-                    <div class="whatSay__icon"></div>
-                </div>
-                <div class="whatSay__slide">
-                    <img src="img/video-2.jpg" alt="video">
-                    <div class="whatSay__icon"></div>
-                </div>
-                <div class="whatSay__slide">
-                    <img src="img/video-3.jpg" alt="video">
-                    <div class="whatSay__icon"></div>
-                </div>
-                <div class="whatSay__slide">
-                    <img src="img/video-1.jpg" alt="video">
-                    <div class="whatSay__icon"></div>
-                </div>
-                <div class="whatSay__slide">
-                    <img src="img/video-2.jpg" alt="video">
-                    <div class="whatSay__icon"></div>
-                </div>
-                <div class="whatSay__slide">
-                    <img src="img/video-3.jpg" alt="video">
-                    <div class="whatSay__icon"></div>
-                </div>
+
+                <?php $video = new WP_Query( array(
+                        'post_type' => 'video',
+                        'posts_per_page'=> -1
+                    ));
+
+                    while ( $video->have_posts() ) :  $video->the_post(); ?>
+
+                    <div class="whatSay__slide">
+                        <?php echo the_content(); ?>
+                        <div class="whatSay__icon"></div>
+                    </div>
+
+                <?php endwhile; 
+                    wp_reset_postdata();
+                ?>
+
             </div>
         </div>
     </section>
@@ -257,38 +255,27 @@ get_header();
         <div class="container blog__container">
             <h2 class="blog__title">Блог</h2>
             <div class="blog__slider">
-                <div class="blog__slide">
-                    <div class="blog__img">
-                        <img src="img/blog-1.jpg" alt="blog image">
+
+                <?php $blog = new WP_Query( array(
+                        'post_type' => 'blog',
+                        'posts_per_page'=> -1
+                    ));
+
+                    while ( $blog->have_posts() ) :  $blog->the_post(); ?>
+
+                    <div class="blog__slide">
+                        <div class="blog__img">
+                            <?php echo get_the_post_thumbnail(get_the_ID(), 'blog-thumb'); ?>
+                        </div>
+                        <h3 class="blog__subtitle"><?php the_title(); ?></h3>
+                        <div class="blog__excerpt"><?php the_excerpt(); ?></div>
+                        <a href="<?php the_permalink(); ?>" class="blog__link">Читати далі</a>
                     </div>
-                    <h3 class="blog__subtitle">Які послуги ми надаємо?</h3>
-                    <div class="blog__excerpt">Стяжка напівсуха - тривалість виконання  - 1 день...</div>
-                    <a href="#" class="blog__link">Читати далі</a>
-                </div>
-                <div class="blog__slide">
-                    <div class="blog__img">
-                        <img src="img/blog-2.jpg" alt="blog image">
-                    </div>
-                    <h3 class="blog__subtitle">Я -твій персональний порадник.</h3>
-                    <div class="blog__excerpt">Сьогодні хочу розказати тобі про графік роботи...</div>
-                    <a href="#" class="blog__link">Читати далі</a>
-                </div>
-                <div class="blog__slide">
-                    <div class="blog__img">
-                        <img src="img/blog-1.jpg" alt="blog image">
-                    </div>
-                    <h3 class="blog__subtitle">Я -твій персональний порадник.</h3>
-                    <div class="blog__excerpt">Сьогодні хочу розказати тобі про графік роботи...</div>
-                    <a href="#" class="blog__link">Читати далі</a>
-                </div>
-                <div class="blog__slide">
-                    <div class="blog__img">
-                        <img src="img/blog-2.jpg" alt="blog image">
-                    </div>
-                    <h3 class="blog__subtitle">Я -твій персональний порадник.</h3>
-                    <div class="blog__excerpt">Сьогодні хочу розказати тобі про графік роботи...</div>
-                    <a href="#" class="blog__link">Читати далі</a>
-                </div>
+
+                <?php endwhile; 
+                    wp_reset_postdata();
+                ?>
+
             </div>
         </div>
     </section>
