@@ -48,13 +48,13 @@
             </div>
             <div class="whatDoing footer__item footer__item--middle">
                 <div class="whatDoing__items">
-                    <div class="whatDoing__item"><a href="№" class="whatDoing__link">напівсуха стяжка</a></div>
-                    <div class="whatDoing__item"><a href="№" class="whatDoing__link">монтаж сантехніки <br>та опалення</a></div>
+                    <div class="whatDoing__item"><a href="<?php echo home_url('/services/dry-screed/'); ?>" class="whatDoing__link">напівсуха стяжка</a></div>
+                    <div class="whatDoing__item"><a href="<?php echo home_url('/services/plumbing-and-burning/'); ?>" class="whatDoing__link">монтаж сантехніки <br>та опалення</a></div>
                 </div>
                 <div class="whatDoing__items">
-                    <div class="whatDoing__item"><a href="№" class="whatDoing__link">ремонт під ключ</a></div>
-                    <div class="whatDoing__item"><a href="№" class="whatDoing__link">будівництво котеджів</a></div>
-                    <div class="whatDoing__item"><a href="№" class="whatDoing__link">ландшафтний дизайн</a></div>
+                    <div class="whatDoing__item"><a href="<?php echo home_url('/services/repair-key/'); ?>" class="whatDoing__link">ремонт під ключ</a></div>
+                    <div class="whatDoing__item"><a href="<?php echo home_url('/services/budivnycztvo-kotedzhiv/'); ?>" class="whatDoing__link">будівництво котеджів</a></div>
+                    <div class="whatDoing__item"><a href="<?php echo home_url('/services/landscape-design/'); ?>" class="whatDoing__link">ландшафтний дизайн</a></div>
                 </div>
             </div>
             <div class="footer__item footer__item--last">

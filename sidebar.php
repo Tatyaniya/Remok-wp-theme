@@ -12,6 +12,14 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 }
 ?>
 
-<aside id="secondary" class="widget-area">
-	<?php dynamic_sidebar( 'sidebar-1' ); ?>
-</aside><!-- #secondary -->
+<aside class="blogPage__aside">
+
+    <?php dynamic_sidebar( 'sidebar-1' ); ?>
+    
+    <!-- <p>І етап  як правильно проводити заміри</p>
+    <p class="active">Інструкція з монтажу та поради</p> -->
+</aside>
+
+<!-- <aside id="secondary" class="widget-area">
+	
+</aside> -->

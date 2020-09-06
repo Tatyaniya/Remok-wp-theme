@@ -28,8 +28,8 @@
     <div class="wrap">
         <header class="header">
             <div class="container header__container">
-                <a href="<?php echo site_url(); ?>" class="Remok Group">
-                    <img src="img/logo.png" alt="Remok Group">
+                <a href="<?php echo site_url(); ?>" class="header__logo">
+                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/logo.png" alt="Remok Group">
                 </a>
                 <nav class="menu header__menu">
                     <div class="hamburger">

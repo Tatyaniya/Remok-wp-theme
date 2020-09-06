@@ -52,7 +52,7 @@ if ( ! function_exists( 'r_group_setup' ) ) :
 			array(
                 'header_menu' => 'header-menu',
                 'header_inner_menu' => 'header-inner-menu',
-                'blog_menu' => 'blog-menu'
+                'services_menu' => 'services-menu'
 			)
         );
 
@@ -215,6 +215,30 @@ add_image_size( 'blog-thumb', 430, 420, true );
  * @see get_post_type_labels() for label keys.
  */
 function r_group_post_type() {
+
+    register_post_type( 'services', array(
+        'labels'             => array(
+            'name'                  => 'Послуги',
+            'singular_name'         => 'Послуга',
+            'add_new'               => 'Додати нову',
+            'add_new_item'          => 'Додати нову послугу',
+            'edit_item'             => 'Редагувати послугу',
+            'all_items'             => 'Всі послуги',
+        ),
+        'public'             => true,
+        'publicly_queryable' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'show_in_rest'       => true,
+        'query_var'          => true,
+        'rewrite'            => array( 'slug' => 'services' ),
+        'capability_type'    => 'post',
+        'has_archive'        => true,
+        'hierarchical'       => false,
+        'menu_position'      => null,
+        'menu_icon'			 => 'dashicons-hammer',
+        'supports'           => array( 'title', 'editor', 'thumbnail', 'excerpt')
+    ) );
  
     register_post_type( 'works', array(
         'labels'             => array(
@@ -275,15 +299,18 @@ function r_group_post_type() {
         'publicly_queryable' => true,
         'show_ui'            => true,
         'show_in_menu'       => true,
+        'show_in_rest'       => true,
         'query_var'          => true,
         'rewrite'            => array( 'slug' => 'blog' ),
         'capability_type'    => 'post',
         'has_archive'        => true,
         'hierarchical'       => false,
         'menu_position'      => null,
+        'taxonomies' => array('category'),
         'menu_icon'			 => 'dashicons-format-gallery',
         'supports'           => array( 'title', 'editor', 'thumbnail', 'excerpt')
     ) );
+
 }
  
 add_action( 'init', 'r_group_post_type' );

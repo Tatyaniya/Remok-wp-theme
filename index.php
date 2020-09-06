@@ -93,7 +93,7 @@ get_header();
                     </div>
                     <h3 class="services__subtitle">Напівсуха стяжка</h3>
                     <div class="services__desc">для квартир, будинків та комерційних <br>приміщень</div>
-                    <a href="#" class="services__link">Детальніше</a>
+                    <a href="<?php echo home_url('/services/dry-screed/'); ?>" class="services__link">Детальніше</a>
                 </li>
                 <li class="services__item services__item--small">
                     <div class="services__icon">
@@ -107,28 +107,28 @@ get_header();
                         <img src="<?php echo get_template_directory_uri() ?>/assets/img/building.svg" alt="building">
                     </div>
                     <h3 class="services__subtitle">Будівництво котеджів</h3>
-                    <a href="#" class="services__link">Детальніше</a>
+                    <a href="<?php echo home_url('/services/budivnycztvo-kotedzhiv/'); ?>" class="services__link">Детальніше</a>
                 </li>
                 <li class="services__item">
                     <div class="services__icon">
                         <img src="<?php echo get_template_directory_uri() ?>/assets/img/plumbing.svg" alt="plumbing">
                     </div>
                     <h3 class="services__subtitle">Монтаж сантехніки <br>та опалення</h3>
-                    <a href="#" class="services__link">Детальніше</a>
+                    <a href="<?php echo home_url('/services/plumbing-and-burning/'); ?>" class="services__link">Детальніше</a>
                 </li>
                 <li class="services__item">
                     <div class="services__icon">
                         <img src="<?php echo get_template_directory_uri() ?>/assets/img/repairs.svg" alt="repairs">
                     </div>
                     <h3 class="services__subtitle">Ремонт під ключ</h3>
-                    <a href="#" class="services__link">Детальніше</a>
+                    <a href="<?php echo home_url('/services/repair-key/'); ?>" class="services__link">Детальніше</a>
                 </li>
                 <li class="services__item">
                     <div class="services__icon">
                         <img src="<?php echo get_template_directory_uri() ?>/assets/img/landscape.svg" alt="landscape">
                     </div>
                     <h3 class="services__subtitle">Ландшафтний дизайн</h3>
-                    <a href="#" class="services__link">Детальніше</a>
+                    <a href="<?php echo home_url('/services/landscape-design/'); ?>" class="services__link">Детальніше</a>
                 </li>
             </ul>
             <div class="services__order">
