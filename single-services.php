@@ -19,10 +19,6 @@ get_header( 'inner' );
 
                 <?php the_content(); ?>
 
-                <?php 
-                    //wp_reset_postdata();
-                ?>
-
             </div>
         </div>
     </section>

@@ -198,6 +198,11 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+/**
+ * Redux Framework
+ */
+require get_template_directory() . '/inc/redux-options-panel.php';
+
 
 
 // размеры для картинок на главной в работах

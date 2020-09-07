@@ -21,27 +21,27 @@
                         <div class="data__icon">
                             <img src="<?php echo get_template_directory_uri() ?>/assets/img/marker.svg" alt="marker">
                         </div>
-                        <div class="data__text">м.Івано-Франківськ</div>               
+                        <div class="data__text"><?php echo $rgroup_options['address']; ?></div>               
                     </address>
                     <div class="data__item">
                         <div class="data__icon">
                             <img src="<?php echo get_template_directory_uri() ?>/assets/img/mail.svg" alt="mail">
                         </div>
-                        <a href="mailto:mail@mail.com" class="data__mail">mail@mail.com</a>
+                        <a href="mailto:mail@mail.com" class="data__mail"><?php echo $rgroup_options['mail']; ?></a>
                     </div>
                     <div class="data__item data__item--clock">
                         <div class="data__icon">
                             <img src="<?php echo get_template_directory_uri() ?>/assets/img/clock.svg" alt="clock">
                         </div>
-                        <div class="data__text">08:00-20:00</div>
+                        <div class="data__text"><?php echo $rgroup_options['operatingmode']; ?></div>
                     </div>
                     <div class="data__item">
                         <div class="data__icon">
                             <img src="<?php echo get_template_directory_uri() ?>/assets/img/phone.svg" alt="phone">
                         </div>
                         <div class="data__phones">
-                            <a href="tel:+380507000117" class="data__phone">050 7 000 117</a>
-                            <a href="tel:+380684101552" class="data__phone">068 4 101 552</a>
+                            <a href="tel:+38<?php echo $rgroup_options['tel1']; ?>" class="data__phone"><?php echo $rgroup_options['tel1']; ?></a>
+                            <a href="tel:+38<?php echo $rgroup_options['tel2']; ?>" class="data__phone"><?php echo $rgroup_options['tel2']; ?></a>
                         </div>
                     </div>
                 </div>

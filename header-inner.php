@@ -23,13 +23,14 @@
 	<?php wp_head(); ?>
 </head>
 
-
 <body>
     <div class="wrap">
         <header class="header">
             <div class="container header__container">
                 <a href="<?php echo site_url(); ?>" class="header__logo">
-                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/logo.png" alt="Remok Group">
+
+                    <img src="<?php echo $rgroup_options['logo']['url']; ?>" alt="Remok Group">
+                    
                 </a>
                 <nav class="menu header__menu">
                     <div class="hamburger">
@@ -61,10 +62,10 @@
                 </nav>
                 <div class="phones header__phones">
                     <div class="phones__item">
-                        <a href="tel:+38050 7 000 117" class="phones__link">050 7 000 117</a>
+                        <a href="tel:+38<?php echo $rgroup_options['tel1']; ?>" class="phones__link"><?php echo $rgroup_options['tel1']; ?></a>
                     </div>
                     <div class="phones__item">
-                        <a href="tel:+38068 4 101 552" class="phones__link">068 4 101 552</a>
+                        <a href="tel:+38<?php echo $rgroup_options['tel2']; ?>" class="phones__link"><?php echo $rgroup_options['tel2']; ?></a>
                     </div>
                 </div>
             </div>
