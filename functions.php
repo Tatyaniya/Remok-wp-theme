@@ -307,7 +307,7 @@ function r_group_post_type() {
         'hierarchical'       => false,
         'menu_position'      => null,
         'taxonomies' => array('category'),
-        'menu_icon'			 => 'dashicons-format-gallery',
+        'menu_icon'			 => 'dashicons-id-alt',
         'supports'           => array( 'title', 'editor', 'thumbnail', 'excerpt')
     ) );
 

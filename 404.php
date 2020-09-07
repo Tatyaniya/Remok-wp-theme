@@ -14,7 +14,7 @@ get_header( 'inner' );
         <section class="blogPage blogPage-404">
             <div class="container blogPage__container">
                 <h2 class="blogPage__title">Такої сторінки у нас немає.</h2>
-                <div class="blogPage__subtitle">Перейти до послуг:</div>
+                <div class="blogPage__subtitle">Перейти до послуги:</div>
                 <nav class="blogPage__menu">
 
                     <?php
